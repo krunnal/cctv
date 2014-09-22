@@ -1,14 +1,35 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
-	<head>
-		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-		<title>Rtc sixsteps</title>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<link href="css/bootstrap.min.css" rel="stylesheet" />
-        <link href="css/style.css" rel="stylesheet" />
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
 
-             <style>
-            audio, video {
+<head>
+
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>CCTV Live</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="css/grayscale.css" rel="stylesheet">
+
+    <!-- Custom Fonts -->
+    <link href="font-awesome-4.1.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="http://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" rel="stylesheet" type="text/css">
+    <link href="http://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if IE]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <style>
+   		audio, video {
                 -moz-transition: all 1s ease;
                 -ms-transition: all 1s ease;
                 
@@ -19,7 +40,7 @@
                 width: 100%;
             }
 
-            input {
+        input {
                 border: 1px solid #d9d9d9;
                 border-radius: 1px;
                 font-size: 2em;
@@ -27,48 +48,155 @@
                 width: 30%;
             }
 
-            .setup {
-	border-bottom-left-radius: 0;
-	border-top-left-radius: 0;
-	font-size: 102%;
-	height: 47px;
-	margin-left: -9px;
-	margin-top: 8px;
-	position: absolute;
-	top: 235px;
-	left: 237px;
-            }
+        .setup {
+				border-bottom-left-radius: 0;
+				border-top-left-radius: 0;
+				font-size: 102%;
+				height: 47px;
+				margin-left: -9px;
+				margin-top: 8px;
+				position: absolute;
+				top: 235px;
+				left: 237px;
+            	}
 
-            p { padding: 1em; }
+            p {
+	padding: 1em;
+}
+.commented-container{
+}
 
-            li {
-                border-bottom: 1px solid rgb(189, 189, 189);
-                border-left: 1px solid rgb(189, 189, 189);
-                padding: .5em;
-            }
-             </style>
-        
-         <script>
+            
+    </style>
+   
+<script>
             document.createElement('article');
             document.createElement('footer');
         </script>
         
-        <!-- scripts used for broadcasting -->
+       
         <script src="//cdn.webrtc-experiment.com/firebase.js"> </script>
- <script src="/socket.io/socket.io.js"> </script>
+        <script src="/socket.io/socket.io.js"> </script>
         <script src="//cdn.webrtc-experiment.com/RTCMultiConnection.js"> </script>
-	</head>
-	<body>
-    	<div class="navbar navbar-inverse navbar-static-top">
-        	<div class="container">
-            	<div class=""><a href="index.html"><img src="img/private.png" /></a></div>
-            </div>
-        </div>
+        <link rel="stylesheet" href="//code.jquery.com/ui/1.11.1/themes/smoothness/jquery-ui.css">
+        <script src="//code.jquery.com/ui/1.11.1/jquery-ui.js"></script>
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
         
+            <script>            
+			jQuery(document).ready(function() {
+				var offset = 200;
+				var duration = 500;
+				jQuery(window).scroll(function() {
+					if (jQuery(this).scrollTop() > offset) {
+						jQuery('.scroll-to-top').fadeIn(duration);
+					} else {
+						jQuery('.scroll-to-top').fadeOut(duration);
+					}
+				});
+				
+				jQuery('.scroll-to-top').click(function(event) {
+					event.preventDefault();
+					jQuery('html, body').animate({scrollTop: 0}, duration);
+					return false;
+				})
+			});
+	</script>
+        
+
+</head>
+
+<body id="page-top" data-spy="scroll" data-target=".navbar-fixed-top">
+
+ <!--[if IE]>
+
+<div style="width: 100%; border: 1px solid #F7941D; background: #FEEFDA; text-align: center;&quot;&gt; clear: both; height: 75px; position: relative;">
+
+<div style="width: 100%; margin: 0 auto; text-align: left; padding: 0; overflow: hidden; color: black;">
+
+<div style="width: 10%; float: left;"><img alt="Warning!" src="img/ie6nomore-warning.jpg" /></div>
+
+<div style="width: 90%; float: left; font-family : Arial, sans-serif; ">
+
+<div style="font-size: 14px; font-weight: bold; margin-top: 12px;">You are using an obsolete and unsupported browser. For better user experience please switch to <a href="http://www.google.com/chrome">Chrome</a>, <a href="http://getfirefox.com">FireFox</a>.
+
+Thanks!</div>
+
+</div>
+
+</div>
+
+</div>
+
+<![endif]-->
+
+<div id="fb-root"></div>
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.0";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-custom navbar-fixed-top" role="navigation">
         <div class="container">
-        	<div class="jumbotron">
-            	<center><h2>Private & Free security broadcast solution</h2><br /><br />
-                <div class="panel">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-main-collapse">
+                    <i class="fa fa-bars"></i>
+                </button>
+                <a class="navbar-brand page-scroll" href="#page-top">
+                   <img src="img/Arrows-Right-round-icon.png" height="30px" width="30px" align="top" />  <span class="light"><font size="+2">CCTV</span> Live</font>
+                </a>
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse navbar-right navbar-main-collapse">
+                <ul class="nav navbar-nav">
+                    <!-- Hidden li included to remove active class from about link when scrolled up past about section -->
+                    <li class="hidden">
+                        <a href="#page-top"></a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="#about">Help</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="#disclaimer">Disclaimer</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="#contact">Contact</a>
+                    </li>
+                 
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container -->
+    </nav>
+
+    <!-- Intro Header -->
+    <header class="intro">
+      	 
+        <div class="intro-body"> 
+        		<div style="margin-top: 6%; border-style:dashed; border-color:#333">      
+                
+                	 <p class="">Add goes here</p>
+                     </div>
+                     
+            <div class="container">
+                <div class="row">
+                <div>
+                    <!-- <div class="col-md-8 col-md-offset-2">
+                    
+                       <h1 class="brand-heading">CCTV Live</h1>-->
+                        <p class="intro-text">Private & Free security broadcast solution						 						</p>
+                        <!--<a href="#about" class="btn btn-circle page-scroll">
+                            <i class="fa fa-angle-double-down animated"></i>
+                        </a>-->
+                      
+                        <div class="panel">
                 
                 
                 	<section class="experiment">  <br  />              
@@ -76,22 +204,23 @@
                  
                    <span>
                     
-                       <font style="font-size:18px" color="#0099FF"><b>Click Here!!</b></font>&nbsp;&nbsp;
+                       <font style="font-size:18px" color="#FFFFFF"><b>Click Here!!</b></font>&nbsp;&nbsp;
                        <img src="img/Arrows-Right-round-icon.png" height="30px" width="30px" align="top" /> 
-                       <a href="" target="_blank" title="Open this link. Then your room will be private!" onclick="setTimeout(function(){var ww = window.open(window.location, '_self'); ww.close(); }, 1);"><code><strong id="unique-token"><font style="font-size:22px"><b>#123456789</b></font></strong></code></a>
+                       <a href="" target="_blank" title="Open this link. Then your room will be private!" onclick="setTimeout(function(){var ww = window.open(window.location, '_self'); ww.close(); }, 1);"><code style="font-size:20px"><strong style="background-color:transparent" id="unique-token"><b>#123456789</b></strong></code></a>
                    </span>
-                    <div class="input-group col-lg-4">
+                   <center> <div class="commented-container input-group col-lg-4" style="padding-top: 1%">
                 	<input type="text" style="visibility:hidden" id="broadcast-name" class="form-control" placeholder="Room name" />
-                    <span class="input-group-btn">
-                    	<button style="visibility:hidden" id="setup-new-broadcast" class="btn btn-primary">Broadcast</button>
+                    <span class="input-group-btn"  style="padding-top: 0%">
+                    	<button style="visibility:hidden" id="setup-new-broadcast" class="btn btn-default btn-group-sm">Broadcast</button>
                     </span>
-                    <span style="padding-left:30px" class="input-group-btn">
-                    	<a style="visibility:hidden" id="share" class="btn btn-primary" href="#sharewith" data-toggle="modal">Share</a>
+                        
+                 <!--  <span style="padding-left:30px" class="input-group-btn">
+                    	<a style="visibility:" id="share" class="btn btn-primary" href="#sharewith" data-toggle="modal">Share</a>
                        
-                    </span>
+                    </span>-->
                     
                     <br />
-                </div> 
+                </div> </center>
                     
                 </section>
                 
@@ -116,8 +245,10 @@
                     e.mediaElement.width = 600;
                     videosContainer.insertBefore(e.mediaElement, videosContainer.firstChild);
                    // rotateVideo(e.mediaElement);
-                    scaleVideos();
-					document.getElementById('share').style.visibility = 'visible';
+                    scaleVideos(); 
+					$(".commented-container").uncomment();
+					
+					//document.getElementById('share').style.visibility = 'visible';
 					document.getElementById('broadcast-name').disabled = 'true';
                 };
 
@@ -145,8 +276,8 @@
                     sessions[session.sessionid] = session;
 
                     var tr = document.createElement('tr');
-                    tr.innerHTML = '<td><strong>' + session.sessionid + '</strong> is sharing his webcam in one-way direction!</td>' +
-                        '<td><button class="join">View His Webcam</button></td>';
+                    tr.innerHTML = '<td><strong style="color:#0C0; font-size:24px; font-weight:bold">' + session.sessionid + '</strong> is sharing CCTV cam in one-way direction!</td>' +
+                        '<td style="padding-bottom: 10px"><button class="join btn btn-default btn-sm">View CCTV LIVE</button></td>' + '<td width="25%"></td>';
 						
 						if(tr != null)
 							{
@@ -154,7 +285,7 @@
 						    document.getElementById('broadcast-name').style.visibility = 'hidden';
 							
 							var uniqueToken1 = document.getElementById('hid');
-							uniqueToken1.parentNode.parentNode.parentNode.innerHTML =  '<code><strong>Please Join</strong></code>';
+							uniqueToken1.parentNode.parentNode.parentNode.innerHTML =  '<code><strong><font color="#CC6600">Please Join</font></strong></code>';
 							
 							
 						
@@ -212,7 +343,7 @@ var rtcMultiConnection = new RTCMultiConnection({
 						{
 							/*uniqueToken.parentNode.parentNode.parentNode.innerHTML = '<h2 style="text-align:center;"><a href="' + location.href + '" target="_blank">Share this link</a></h2>';*/
 							
-						uniqueToken.parentNode.parentNode.parentNode.innerHTML =  '<code><strong id="hid">Start Broadcasting</strong></code>';
+						uniqueToken.parentNode.parentNode.parentNode.innerHTML =  '<code style="font-size:20px"><strong id="hid"><font color="#CC6600">Start Broadcasting</font></strong></code>';
 						document.getElementById('setup-new-broadcast').style.visibility = 'visible'; 
 						document.getElementById('broadcast-name').style.visibility = 'visible';	
 						//document.getElementById('share').style.visibility = 'visible';
@@ -256,54 +387,175 @@ var rtcMultiConnection = new RTCMultiConnection({
             </script>
                 
                 
-                </div><br />
-                 <h3>Watch live video streams from anywhere on any device.</h3>
+                </div>
+                   <h6 class="brand-heading" style="margin-bottom:5px">Watch live video streams from anywhere on any device.</h6>				
+                    <div style="margin-bottom:10px" class="fb-like" data-href="http://www.cctvlive.in/" data-layout="button_count" data-action="like" data-show-faces="true" data-share="true"></div>
+                  <h4 class="brand-heading1" style="color:#666; text-transform:none"><font color="#FF0000">**</font>[ Please access this site in 'Firefox' or 'Google Chrome' only. ]</h4>
+                 
+                     
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- About Section -->
+    <section class="container content-section text-center">
+        <div class="row" id="about" style="padding-top:100px">
+            <div class="">
+                <h2>Step by step guide to start broadcast :</h2>
+                <div class="jumbotron" style="padding-left: 1%; padding-top: 20px">
+            	<h4 style="color:#666"><font color="#FF0000">**</font>[ Please access this site in 'Firefox' or 'Google Chrome' only. ]</h4>
+                 
+                <div class="container">
                 
+                	<div class="">
+                    <h3 style="padding-left: 10px;padding-top: 10px; color:#666">Follow these steps to start :</h3>
+                		
+                    		<div class="row">
+                            	
+                                <div class="col-md-6">
+                                <div class="experiment" style="border-width: 4px">
+                                	<p style="font-size:16px;padding-bottom: 12px;padding-top: 12px; color:#09F"><b><i>Step 1: Click on # link.</i></p>
+                                    <img style="padding-left: 5px;padding-right: 5px;padding-bottom: 5px" class="img-responsive" src="img/step1.jpg" />
+                                </div>
+                                </div>
+                                
+                                <div class="col-md-6">
+                                    <div class="experiment"  style="border-width: 4px">
+                                	<p style="font-size:16px;padding-bottom: 12px;padding-top: 12px; color:#09F"><b><i>Step 2: Enter room name & start broadcast.</i></p>
+                                    <img style="padding-left: 5px;padding-right: 5px;padding-bottom: 5px" class="img-responsive" src="img/step2.jpg" />
+                                </div>
+                                </div>
+                                                                
+                                <div class="col-md-6">
+                                <div class="experiment"  style="border-width: 4px">
+                                	<p style="font-size:18px;padding-bottom: 12px;padding-top: 12px; color:#09F"><b><i>Step 3: Please allow access to use webcam.</i></p>
+                                    <img style="padding-left: 5px;padding-right: 5px;padding-bottom: 5px" class="img-responsive" src="img/step3.jpg" />
+                                </div>
+                                </div>
+                                
+                                
+                                 <div class="col-md-6">
+                                 <div class="experiment"  style="border-width: 4px">
+                                	<p style="font-size:18px;padding-bottom: 12px;padding-top: 12px; color:#09F"><b><i>Step 4: Share your private link.</i></p>
+                                    <img style="padding-left: 5px;padding-right: 5px;padding-bottom: 5px" class="img-responsive" src="img/step4.jpg" />
+                                </div>
+                                </div>
+                                
+                                                     
+                                <div class="col-md-6">
+                                <div class="experiment"  style="border-width: 4px">
+                                	<p style="font-size:18px;padding-bottom: 12px;padding-top: 12px; color:#09F"><b><i>Step 5: Use mail for sharing.</i></p>
+                                    <img style="padding-left: 5px;padding-right: 5px;padding-bottom: 5px" class="img-responsive" src="img/step5.jpg" />
+                                </div>
+                                </div>
+                                
+                                
+                                <div class="col-md-6">
+                                <div class="experiment"  style="border-width: 4px">
+                                	<p style="font-size:16px;padding-bottom: 9px;padding-top: 12px; color:#09F"><b><i>Step 6: After sharing use private link to view.</i></p>
+                                    <div style="margin-top:-20px; margin-bottom:8px; color:#333">**Please wait for a moment the private page to appear.</div>
+                                    <img style="padding-left: 5px;padding-right: 5px;padding-bottom: 0px" class="img-responsive" src="img/step7.jpg" />
+                                </div>
+                                </div>
+                                
+                                
+
+                            </div>
+                    	
+                    </div>
+                
+                </div>
                
                 
                 
             </div>
+            </div>
         </div>
-    
-    <br /><br />
-    	<div class="navbar" style="background-color:rgba(102,102,102,0.5)">
-        	<div class="container">
-        		<div class="row">
-                <div class="col-md-2">
-	            		<img class="featuredImg" src="img/f.png" width="100%" />
-                    </div>
-                	<div class="col-md-3">
-	            		<img class="featuredImg" src="img/f11.png" width="100%" />
-                    </div>
-                    <div class="col-md-3">    
-                		<img class="featuredImg" src="img/f21.png" width="100%" />
-                    </div>
-                    <div class="col-md-3">
-	                	<img class="featuredImg" src="img/f31.png" width="100%" />
-                    </div>
-                    <div class="col-md-11">
-	            		<img style="float:right" class="featuredImg" src="img/f4.png" width="20%" />
-                    </div>
+    </section>
+
+    <!-- Download Section -->
+    <section class="content-section text-center">
+        <div class="download-section" id="disclaimer" style="padding-top:100px">
+            <div class="container">
+                <div class="">
+                    <h2>Disclaimer :</h2>
+                    <p style="font-weight:100; font-family:Myriad, Arial, Verdana; font-size:16px">The content of this site is intended solely to provide information, by using the related regulations that currently apply, as a reference to such information. This site is not intended for business purposes or to provide legal advice. You are not allowed to take any legal action based on the information contained in this site without first seeking the advice of a lawyer or professional consultants.
+                    <br /><br />
+                    You specifically agree that CCTV Live shall not be responsible for any unauthorized access to or alteration of your transmissions or data, any material or data sent or received or not sent or received, or any transactions entered into through a CCTV Live site/ services. You specifically agree that CCTV Live is not responsible or liable for any threatening, defamatory, obscene, offensive or illegal content or conduct of any other party or any infringement of another's rights, including intellectual property rights.
+                    <br /><br />
+                    You specifically agree that CCTV Live is not responsible for any content sent using and/or included in a CCTV Live site/ services by any third party.
+                   <br /><br />
+                    CCTV Live reserves the right to disclose any personal information about you or your use of the CCTV Live sites/services, including its contents.
+                   <br /><br />
+                     Because CCTV Live media content is streamed over the internet, several factors, including your viewing computer device system resources as well as your internet connection speed bandwidth, affect the quality of your live media viewing experience.
+                     </p>
+                    
+                    
                 </div>
-          	</div>
+            </div>
         </div>
-        <div class="modal fade" id="sharewith" role="dialog">
+    </section>
+
+    <!-- Contact Section -->
+    <section class="container content-section text-center">
+        <div class="row"  id="contact" style="padding-top:100px">
+            <div class="col-lg-8 col-lg-offset-2">
+                <h2>Contact CCTV Live</h2>
+                <p><address>
+  							<span style="color:#09F; font-family:Verdana, Geneva, sans-serif; font-size:18px">Six Steps Technologies Pvt. Ltd.</span><br>
+  				           Paud Road, Kothrud, PUNE 38<br>
+  
+						</address>
+                </p>
+                <ul class="list-inline banner-social-buttons">
+                    <li>
+                        <a href="https://twitter.com/SBootstrap" class="btn btn-default btn-lg"><i class="fa fa-facebook fa-fw"></i> <span class="network-name">Facebook</span></a>
+                    </li>
+                    <li>
+                        <a href="https://github.com/IronSummitMedia/startbootstrap" class="btn btn-default btn-lg"><i class="fa fa-linkedin fa-fw"></i> <span class="network-name">Linkedin</span></a>
+                    </li>
+                    <li>
+                        <a href="https://plus.google.com/+Startbootstrap/posts" class="btn btn-default btn-lg"><i class="fa fa-google-plus fa-fw"></i> <span class="network-name">Google+</span></a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </section>
+ <div class="scroll-to-top">Up
+</div>
+    <!-- Map Section 
+    <div id="map"></div>-->
+
+    <!-- Footer -->
+    <footer>
+        <div class="container text-center">
+            <p>Copyright &copy; CCTV Live 2014</p>
+        </div>
+                         
+    </footer>
+    
+    
+    <div class="modal fade" id="sharewith" role="dialog">
         	<div class="modal-dialog">
             	<div class="modal-content">
                 	<div class="modal-header">
-                    	<h4>Share with</h4>
+                    	<h4><font color="#333333">Mail</h4>
                     </div>
                     <div class="modal-body">
-                    	<SCRIPT language="javascript">
-function mailpage()
-{
-mail_str = "mailto:?subject= Fill in your subject line here";
-mail_str += "&body= Put a message in the email body here";
-mail_str += " " + parent.location.href;
-location.href = mail_str;
-}
-</SCRIPT>
-<A HREF = "javascript:mailpage()">Email this page to a friend</A></p>
+                    	
+                        
+                        <b><font color="#333333">Click here</b>
+                        <img src="img/Arrows-Right-round-icon.png" height="20px" width="20px" align="top" />
+                        <a href="#mail" data-toggle="modal"><img src="img/gmaillogo.png" width="50px" height="40px" /></a>
+                        <h5><i><font color="#333333" style="text-transform:none">**If facing issue with email sharing, copy the url and share it.</i></h5>
+                        
+                        
+                        
+                        
+                        
                     </div>
                     <div class="modal-footer">
                     	<a class="btn btn-default" data-dismiss="modal">Close</a>
@@ -311,9 +563,70 @@ location.href = mail_str;
                 </div>
             </div>
         </div>
+        
+        <!-- Mail -->
+        
+        
+         <div class="modal fade" id="mail" role="dialog" >
+        	<div class="modal-dialog">
+            	<div class="modal-content">
+                	<div class="modal-header">
+                    	<h4><font color="#333333">Mail</h4>
+                    </div>
+                    <div class="modal-body">
+                    	
+                                 
+                        
+                        
+                        <form name="tellafriend" action="http://renderfarm3d.net/form/tellafriend.php" method="post" onsubmit="return check_entryform(tellafriend);" target="_blank">
+<table class="table table-responsive" width="" align="center" style=" border:none; margin: 3px; padding: 3px;">
+
+<tr style="border:hidden"><td width="50%" align=""><h5><font style="text-transform:none">Senders Name:</font></h5></td><td align=""><input class="form-control" size="50" name="usersname"></td></tr>
+<tr style="border:hidden"><td align=""><h5><font style="text-transform:none">Senders E-mail Address:</font></h5></td><td align=""><input class="form-control" size="50" name="usersemail"></td></tr>
+<tr style="border:hidden"><td align=""><h5><font style="text-transform:none">Receivers Name:</font></h5></td><td align=""><input class="form-control" size="50" name="friendsname"></td></tr>
+<tr style="border:hidden"><td align=""><h5><font style="text-transform:none">Receivers E-mail Address:</font></h5></td><td align=""><input class="form-control" size="50" name="friendsemail">
+<input type="hidden" id="name" name="privatekey">
+<script type="text/javascript">
+  var a = document.getElementById("name");
+  var b = document.location.href;
+  a.value = b;
+</script></td></tr>
+<tr><td align="">&nbsp;</td><td align="middle"><input class="btn btn-primary" value="Send" name="submit" type="submit"  onclick="setTimeout(function(){
+  $('#mail').modal('hide')
+}, 2000);"></td></tr>
+
+</table>
+</form>
+                        
+
+                        
+                        
+                        
+                    </div>
+                    <div class="modal-footer">
+                    	<a class="btn btn-default" data-dismiss="modal">Close</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+	<script type='text/javascript' src='formcheck.js'></script>
          <script src="//cdn.webrtc-experiment.com/commits.js" async> </script>
-    	<script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
-		<script src="http://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
-    	<script src="js/bootstrap.js"></script>
-	</body>
+    <!-- jQuery Version 1.11.0 -->
+    <script src="js/jquery-1.11.0.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="js/bootstrap.min.js"></script>
+
+    <!-- Plugin JavaScript -->
+    <script src="js/jquery.easing.min.js"></script>
+
+    <!-- Google Maps API Key - Use your own API key to enable the map feature. More information on the Google Maps API can be found at https://developers.google.com/maps/ -->
+    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCRngKslUGJTlibkQ3FkfTxj3Xss1UlZDA&sensor=false"></script>
+
+    <!-- Custom Theme JavaScript -->
+    <script src="js/grayscale.js"></script>
+    <script src="js/jquery.uncomment.js"></script>
+
+</body>
+
 </html>

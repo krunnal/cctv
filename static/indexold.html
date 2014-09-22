@@ -170,7 +170,7 @@ Thanks!</div>
                        <img src="img/Arrows-Right-round-icon.png" height="30px" width="30px" align="top" /> 
                        <a href="" target="_blank" title="Open this link. Then your room will be private!" onclick="setTimeout(function(){var ww = window.open(window.location, '_self'); ww.close(); }, 1);"><code style="font-size:20px"><strong style="background-color:transparent" id="unique-token"><b>#123456789</b></strong></code></a>
                    </span>
-                   <center> <div class="input-group col-lg-5" style="padding-left: 6%">
+                    <div class="input-group col-lg-4">
                 	<input type="text" style="visibility:hidden" id="broadcast-name" class="form-control" placeholder="Room name" />
                     <span class="input-group-btn">
                     	<button style="visibility:hidden" id="setup-new-broadcast" class="btn btn-default btn-group-sm">Broadcast</button>
@@ -182,7 +182,7 @@ Thanks!</div>
                     </span>
                     
                     <br />
-                </div> </center>
+                </div> 
                     
                 </section>
                 
@@ -236,8 +236,8 @@ Thanks!</div>
                     sessions[session.sessionid] = session;
 
                     var tr = document.createElement('tr');
-                    tr.innerHTML = '<td><strong style="color:#0C0; font-size:24px; font-weight:bold">' + session.sessionid + '</strong> is sharing CCTV cam in one-way direction!</td>' +
-                        '<td style="padding-bottom: 10px"><button class="join btn btn-default btn-sm">View CCTV LIVE</button></td>' + '<td width="25%"></td>';
+                    tr.innerHTML = '<td><strong>' + session.sessionid + '</strong> is sharing CCTV cam in one-way direction!</td>' +
+                        '<td><button class="join">View CCTV LIVE</button></td>';
 						
 						if(tr != null)
 							{
@@ -245,7 +245,7 @@ Thanks!</div>
 						    document.getElementById('broadcast-name').style.visibility = 'hidden';
 							
 							var uniqueToken1 = document.getElementById('hid');
-							uniqueToken1.parentNode.parentNode.parentNode.innerHTML =  '<code><strong><font color="#CC6600">Please Join</font></strong></code>';
+							uniqueToken1.parentNode.parentNode.parentNode.innerHTML =  '<code><strong>Please Join</strong></code>';
 							
 							
 						
@@ -303,7 +303,7 @@ var rtcMultiConnection = new RTCMultiConnection({
 						{
 							/*uniqueToken.parentNode.parentNode.parentNode.innerHTML = '<h2 style="text-align:center;"><a href="' + location.href + '" target="_blank">Share this link</a></h2>';*/
 							
-						uniqueToken.parentNode.parentNode.parentNode.innerHTML =  '<code><strong id="hid"><font color="#CC6600">Start Broadcasting</font></strong></code>';
+						uniqueToken.parentNode.parentNode.parentNode.innerHTML =  '<code><strong id="hid">Start Broadcasting</strong></code>';
 						document.getElementById('setup-new-broadcast').style.visibility = 'visible'; 
 						document.getElementById('broadcast-name').style.visibility = 'visible';	
 						//document.getElementById('share').style.visibility = 'visible';
@@ -406,8 +406,8 @@ var rtcMultiConnection = new RTCMultiConnection({
         </div>
     </section>
 
-    <!-- Map Section 
-    <div id="map"></div>-->
+    <!-- Map Section -->
+    <div id="map"></div>
 
     <!-- Footer -->
     <footer>

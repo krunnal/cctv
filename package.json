@@ -2,7 +2,7 @@
   "name": "rtc2",
   "subdomain": "rtc2",
   "preferGlobal": true,
-  "version": "3.0.0-24",
+  "version": "3.0.0-26",
   "author": {
     "name": "Krunnal Gharre",
     "email": "gharrekrunnal@gmail.com"
