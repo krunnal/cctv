@@ -1,0 +1,11 @@
+@charset "utf-8";
+/* CSS Document */
+
+@media (max-width: 979px) {
+  .navbar-fixed-top,
+  .navbar-fixed-bottom {
+      position: fixed;
+      margin-left: 0px;
+      margin-right: 0px;
+  }
+}

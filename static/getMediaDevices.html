@@ -1,0 +1,93 @@
+﻿<!--
+> Muaz Khan     - github.com/muaz-khan 
+> MIT License   - www.webrtc-experiment.com/licence
+> Documentation - www.RTCMultiConnection.org
+-->
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>navigator.getMediaDevices / navigator.enumerateDevices / MediaStreamTrack.getSources using RTCMultiConnection ® Muaz Khan</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+        <link rel="author" type="text/html" href="https://plus.google.com/+MuazKhan">
+        <meta name="author" content="Muaz Khan">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        
+        <link rel="stylesheet" href="//cdn.webrtc-experiment.com/style.css">
+        
+       
+        <script>
+            document.createElement('article');
+            document.createElement('footer');
+        </script>
+        
+        <!-- currently only v2+ are supporting "enumerateDevices" method. -->
+        <script src="//cdn.webrtc-experiment.com/RTCMultiConnection.js"></script>
+    </head>
+
+    <body>
+        <article>
+                   
+        
+            <!-- just copy this <section> and next script -->
+            <section class="experiment">
+                <h2>Select Media Device</h2><br /><br />
+                <select id="audio-devices"></select>
+                <select id="video-devices"></select><br /><br />
+                <button id="select-device">Select Device</button><br />
+                
+                <div id="videos"></div>
+            </section>
+        
+            <script>
+                var connection = new RTCMultiConnection();
+                connection.setDefaultEventsForMediaElement = false;
+
+                connection.enumerateDevices(function (devices) {
+                    devices.forEach(appendOption);
+
+                    function appendOption(device) {
+                        var option = document.createElement('option');
+                        option.innerHTML = device.label || (device.kind + ': ' + device.deviceId);
+                        option.value = device.deviceId;
+
+                        if (device.kind.indexOf('audio') !== -1) {
+                            selectAudioDevices.appendChild(option);
+                        } else selectVideoDevices.appendChild(option);
+                    }
+                });
+
+                document.getElementById('select-device').onclick = function () {
+                    //this.disabled = true;
+                    connection.selectDevices(selectAudioDevices.value, selectVideoDevices.value);
+                    connection.captureUserMedia();
+                };
+
+                var selectAudioDevices = document.getElementById('audio-devices');
+                var selectVideoDevices = document.getElementById('video-devices');
+
+                var videos = document.querySelector('#videos');
+
+                connection.onstream = function(e) {
+                    videos.appendChild(e.mediaElement);
+                };
+            </script>
+            
+            
+            
+           
+        
+           
+			
+           
+        </article>
+        
+    
+	
+        
+    
+        <!-- commits.js is useless for you! -->
+        <script src="//cdn.webrtc-experiment.com/commits.js" async> </script>
+    </body>
+</html>

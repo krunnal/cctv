@@ -1,0 +1,366 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="description" content="CCTVLIVE is a new age video security or business solution to keep track of whats going on at home or at local business place for Free. No signups, no downloads completely secure and real time." />
+    <meta name="keywords" content="home security, cctv,  cctv solutions, security cameras, online security camera, cctv on mobile,  real time video, surveillance camera, cheap cctv, surveillance cctv, online cctv, security solution" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="author" content="CCTV Live" />
+
+    <title>Free CCTV Security Solutions</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet" />
+
+    <!-- Custom CSS -->
+    <link href="css/grayscale.css" rel="stylesheet" />
+
+    <!-- Custom Fonts -->
+    <link href="font-awesome-4.1.0/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
+    <link href="http://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" rel="stylesheet" type="text/css" />
+    <link href="http://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css" />
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if IE]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <style type="text/css">
+   		audio, video {
+                -moz-transition: all 1s ease;
+                -ms-transition: all 1s ease;
+                
+                -o-transition: all 1s ease;
+                -webkit-transition: all 1s ease;
+                transition: all 1s ease;
+                vertical-align: top;
+                width: 100%;
+            }
+
+        input {
+                border: 1px solid #d9d9d9;
+                border-radius: 1px;
+                font-size: 2em;
+                margin: .2em;
+                width: 30%;
+            }
+
+        .setup {
+				border-bottom-left-radius: 0;
+				border-top-left-radius: 0;
+				font-size: 102%;
+				height: 47px;
+				margin-left: -9px;
+				margin-top: 8px;
+				position: absolute;
+				top: 235px;
+				left: 237px;
+            	}
+
+            p {
+	padding: 1em;
+}
+.commented-container{
+}
+
+            
+    </style>
+   
+<script type="text/javascript">
+            document.createElement('article');
+            document.createElement('footer');
+        </script>
+        <?php
+		function additional_css_for_fixing_top_bar_mobile_bootstrap() {
+			wp_register_style('wpbootstrap_bootstrap_fixed_top_bar_mobile_css', get_stylesheet_directory_uri() . '/bootstrap_fixed_top_bar_mobile.css', array('wpbootstrap_bootstrap_responsive_css'), null);
+wp_enqueue_style('wpbootstrap_bootstrap_fixed_top_bar_mobile_css');
+ 
+}
+add_action('wp_enqueue_scripts', 'additional_css_for_fixing_top_bar_mobile_bootstrap');
+		
+		
+		
+		?>
+        
+       
+        <script type="text/javascript" src="//cdn.webrtc-experiment.com/firebase.js"> </script>
+        <script type="text/javascript" src="/socket.io/socket.io.js"> </script>
+        <script type="text/javascript" src="//cdn.webrtc-experiment.com/RTCMultiConnection.js"> </script>
+        <link rel="stylesheet" href="//code.jquery.com/ui/1.11.1/themes/smoothness/jquery-ui.css">
+        <script type="text/javascript" src="//code.jquery.com/ui/1.11.1/jquery-ui.js"></script>
+        <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
+        
+            <script type="text/javascript">            
+			jQuery(document).ready(function() {
+				var offset = 200;
+				var duration = 500;
+				jQuery(window).scroll(function() {
+					if (jQuery(this).scrollTop() > offset) {
+						jQuery('.scroll-to-top').fadeIn(duration);
+					} else {
+						jQuery('.scroll-to-top').fadeOut(duration);
+					}
+				});
+				
+				jQuery('.scroll-to-top').click(function(event) {
+					event.preventDefault();
+					jQuery('html, body').animate({scrollTop: 0}, duration);
+					return false;
+				})
+			});
+	</script>
+    
+    <script type="text/javascript">
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-55135290-1', 'auto');
+  ga('send', 'pageview');
+
+</script>	
+        
+
+</head>
+
+<body id="page-top" data-spy="scroll" data-target=".navbar-fixed-top">
+
+ <!--[if IE]>
+
+<div style="width: 100%; border: 1px solid #F7941D; background: #FEEFDA; text-align: center;&quot;&gt; clear: both; height: 75px; position: relative;">
+
+<div style="width: 100%; margin: 0 auto; text-align: left; padding: 0; overflow: hidden; color: black;">
+
+<div style="width: 10%; float: left;"><img alt="Warning!" src="img/ie6nomore-warning.jpg" /></div>
+
+<div style="width: 90%; float: left; font-family : Arial, sans-serif; ">
+
+<div style="font-size: 14px; font-weight: bold; margin-top: 12px;">You are using an obsolete and unsupported browser. For better user experience please switch to <a href="http://www.google.com/chrome">Chrome</a>, <a href="http://getfirefox.com">FireFox</a>.
+
+Thanks!</div>
+
+</div>
+
+</div>
+
+</div>
+
+<![endif]-->
+
+
+<div id="fb-root"></div>
+<div id="fb-root"></div>
+<script type="text/javascript">(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.0";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-fixed-top navbar-custom" role="navigation">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-main-collapse">
+                    <i class="fa fa-bars"></i>
+                </button>
+                <a class="navbar-brand page-scroll" href="index.html">
+                   <img src="img/Arrows-Right-round-icon.png" height="30px" width="30px" alt="Free CCTV Security Solutions" align="top" />  <span class="light"><font size="+2">CCTV</font></span> <font size="+2">Live</font>
+                </a>
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse navbar-right navbar-main-collapse">
+                <ul class="nav navbar-nav">
+                    <!-- Hidden li included to remove active class from about link when scrolled up past about section -->
+                    <li class="hidden">
+                  <a href="index.html"></a> </li>
+                    <li>
+                        <a class="page-scroll" href="index.html"><b>Home</b></a>
+                    </li>
+                   
+              <li>
+                        <a class="page-scroll" href="#contact"><b>Contact</b></a>
+                    </li>
+                   
+                 
+              </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container -->
+    </nav>
+
+    <!-- Intro Header -->
+    <header class="intro">
+      	 
+        <div class="intro-body"> 
+        		<div style="margin-top: 6%; border-style:dashed; border-color:#333">      
+                
+                	 <p class="">Add goes here</p>
+                     </div>                   
+          
+        </div>
+    </header>
+
+    <!-- About Section -->
+    <section class="container content-section text-center">
+        <div class="row" id="faq" style="padding-top:100px">
+            <div class="">
+                <h2>Frequently asked questions :</h2>
+                <div class="jumbotron" style="padding-left: 1%; padding-top: 20px">
+            	<h4 style="color:#666"><font color="#FF0000">**</font>[ Please access this site in 'Firefox' or 'Google Chrome' only. ]</h4>
+                 
+                <div class="container">
+                
+                	<div class="">
+
+
+
+
+<div class="">
+
+
+<h4 style="color:#333; text-align:left">1. Can I use CCTV Live on my mobile device?</h4>
+<h5 style="margin-top:-20px; color:#666; text-align:left; text-transform:none; font-weight:normal">: Yes, CCTV Live is compatible for mobile devices using 'google chrome' or 'firefox' browser.<br> 
+It allows you to access remote cameras from mobile devices 
+such as cell phones and tablets. CCTV Live supports devices Android, IOS. 
+<br><br>
+Although it is recommended to use 'google chrome' or 'firefox' browser in mobile devices.
+<br>
+Google Chrome mobile is available free at <a href="https://play.google.com/store/apps/details?id=com.android.chrome&amp;hl=en" target="_blank&quot;">Google Play Store</a>
+</h5>
+
+
+
+<br>
+
+
+<h4 style="color:#333; text-align:left">2. How can I verify if CCTV Live will work on my device?</h4>
+<h5 style="margin-top:-20px; color:#666; text-align:left; text-transform:none; font-weight:normal"><ul>
+<li>To verify CCTV Live support, please open this <a href="https://apprtc.appspot.com/" target="_blank">link</a> in Google Chrome. If your device supports CCTV Live you will see video from your webcam/rear cam.</li>
+
+</ul></h5>
+
+<h4 style="color:#333; text-align:left">3. What should I use: Firefox or Google Chrome?</h4>
+<h5 style="margin-top:-20px; color:#666; text-align:left; text-transform:none; font-weight:normal"><ul>
+<li>As you like, CCTV Live works on both browsers well.</li>
+</ul></h5>
+
+<h4 style="color:#333; text-align:left">4. I have limited Internet bandwidth. Will CCTV Live impact other Internet users in my home?</h4>
+<h5 style="margin-top:-20px; color:#666; text-align:left; text-transform:none; font-weight:normal">: No, CCTV Live will not impact Internet users in your home because it needs only upload bandwidth.</h5>
+<br>
+
+<h4 style="color:#333; text-align:left">5. What is the required upload bandwidth?</h4>
+<h5 style="margin-top:-20px; color:#666; text-align:left; text-transform:none; font-weight:normal">: The upload bandwidth depends on video resolution as well as video quality based on webcam you used.<br>
+
+</h5>
+<br>
+
+
+<h4 style="color:#333; text-align:left">6. I have old computer. Will it work with CCTV Live?</h4>
+<h5 style="margin-top:-20px; color:#666; text-align:left; text-transform:none; font-weight:normal">: Yes, CCTV Live has very small hardware requirements. </h5>
+<br>
+
+<h4 style="color:#333; text-align:left">7. How long the transmission is maintained after I start webcam?</h4>
+<h5 style="margin-top:-20px; color:#666; text-align:left; text-transform:none; font-weight:normal">: The standard life time for transmission depends on system ideal time. The transmission may be closed earlier if there is power outage or failure of your Internet access.</h5>
+<br>
+
+
+<h4 style="color:#333; text-align:left">8. I have multiple webcams. How can I select one for CCTV Live (Google Chrome)?</h4>
+<h5 style="margin-top:-20px; color:#666; text-align:left; text-transform:none; font-weight:normal">: In Google Chrome open:
+<ol>
+<li>Settings</li>
+<li>Show advanced settings...</li>
+<li>Privacy</li>
+<li>Content settings</li>
+<li>Scroll to Media section</li>
+<li>In drop down menu "Microphone" and "Camera" you can select webcam you want to use.</li>
+</ol>
+</h5>
+
+<br>
+
+</div>
+</div>
+                
+                </div>
+               
+                
+                
+            </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Download Section -->
+   
+
+    <!-- Contact Section -->
+    <section class="container content-section text-center">
+        <div class="row" id="contact" style="padding-top:20px">
+            <div class="col-lg-8 col-lg-offset-2">
+                <h2>Contact CCTV Live</h2>
+                <p><address>
+  							<span style="color:#09F; font-family:Verdana, Geneva, sans-serif; font-size:18px">Six Steps Technologies Pvt. Ltd.</span><br />
+  				           Paud Road, Kothrud, PUNE 38<br />
+  
+						</address>
+                </p>
+                <ul class="list-inline banner-social-buttons">
+                    <li>
+                        <a href="https://www.facebook.com/cctvlive.in" target="_blank" class="btn btn-default btn-lg"><i class="fa fa-facebook-square fa-fw"></i> <span class="network-name">Facebook</span></a>
+                    </li>
+                    <li>
+                        <a href="http://securedcctvlive.blogspot.in/" target="_blank" class="btn btn-default btn-lg"><i class="fa fa-spotify fa-fw"></i> <span class="network-name">Blog</span></a>
+                    </li>
+                    <!--<li>
+                        <a href="https://plus.google.com/+Startbootstrap/posts" class="btn btn-default btn-lg"><i class="fa fa-google-plus fa-fw"></i> <span class="network-name">Google+</span></a>
+                    </li>-->
+                </ul>
+            </div>
+        </div>
+    </section>
+ 
+    <!-- Map Section 
+    <div id="map"></div>-->
+
+    <!-- Footer -->
+    <footer>
+        <div class="container text-center">
+            <p>Copyright &copy; CCTV Live 2014</p>
+            <div class="navbar navbar-fixed-bottom scroll-to-top"><img class="img-responsive" width="100%" height="100%" src="img/scroll-to-top.png" />
+</div>
+        </div>
+                         
+    </footer>
+    
+    
+	<script type='text/javascript' src='formcheck.js'></script>
+         <script type="text/javascript" src="//cdn.webrtc-experiment.com/commits.js" async> </script>
+    <!-- jQuery Version 1.11.0 -->
+    <script type="text/javascript" src="js/jquery-1.11.0.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script type="text/javascript" src="js/bootstrap.min.js"></script>
+
+    <!-- Plugin JavaScript -->
+    <script type="text/javascript" src="js/jquery.easing.min.js"></script>
+
+    <!-- Google Maps API Key - Use your own API key to enable the map feature. More information on the Google Maps API can be found at https://developers.google.com/maps/ -->
+    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCRngKslUGJTlibkQ3FkfTxj3Xss1UlZDA&sensor=false"></script>
+
+    <!-- Custom Theme JavaScript -->
+    <script type="text/javascript" src="js/grayscale.js"></script>
+    <script type="text/javascript" src="js/jquery.uncomment.js"></script>
+
+</body>
+
+</html>

@@ -95,7 +95,7 @@ add_action('wp_enqueue_scripts', 'additional_css_for_fixing_top_bar_mobile_boots
        
         <script type="text/javascript" src="//cdn.webrtc-experiment.com/firebase.js"> </script>
         <script type="text/javascript" src="/socket.io/socket.io.js"> </script>
-        <script type="text/javascript" src="//cdn.webrtc-experiment.com/RTCMultiConnection.js"> </script>
+        <script type="text/javascript" src="js/RTCMultiConnection.js"> </script>
         <link rel="stylesheet" href="//code.jquery.com/ui/1.11.1/themes/smoothness/jquery-ui.css">
         <script type="text/javascript" src="//code.jquery.com/ui/1.11.1/jquery-ui.js"></script>
         <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
@@ -246,12 +246,14 @@ Thanks!</div>
                     <span class="input-group-btn"  style="padding-top: 0%">
                     	<button style="visibility:hidden" id="setup-new-broadcast" class="btn btn-default btn-group-sm">Broadcast</button>
                     </span>
+                  
                         
                  <!--  <span style="padding-left:30px" class="input-group-btn">
-                    	<a style="visibility:" id="share" class="btn btn-primary" href="#sharewith" data-toggle="modal">Share</a>
-                       
+                    	<a style="visibility:" id="share" class="btn btn-primary" href="#sharewith" data-toggle="modal">Share</a></span>
+                        <span style="padding-left:30px" class="input-group-btn">
+                        <a style="visibility:" id="chdevice" class="btn btn-primary" href="#device" data-toggle="modal">Change camera</a>
                     </span>-->
-                    
+                   
                     <br />
                 </div> </center>
                     
@@ -265,7 +267,7 @@ Thanks!</div>
             </section>
              <script type="text/javascript">
                
-                var connection = new RTCMultiConnection();
+                var  connection = new RTCMultiConnection();
                 connection.session = {
                     audio: true,
                     video: true,
@@ -273,14 +275,14 @@ Thanks!</div>
 					
                 };
 				
-				 
+				
                 connection.onstream = function(e) {
                     e.mediaElement.width = 600;
                     videosContainer.insertBefore(e.mediaElement, videosContainer.firstChild);
                    // rotateVideo(e.mediaElement);
                     scaleVideos(); 
 					$(".commented-container").uncomment();
-					
+					//videos.appendChild(e.mediaElement);
 					//document.getElementById('share').style.visibility = 'visible';
 					document.getElementById('broadcast-name').disabled = 'true';
                 };
@@ -570,6 +572,73 @@ var rtcMultiConnection = new RTCMultiConnection({
         </div>
                          
     </footer>
+    
+    <div class="modal fade" id="device" role="dialog">
+        	<div class="modal-dialog">
+            	<div class="modal-content">
+                	<div class="modal-header">
+                    	<h4><font color="#333333">Select camera</font></h4>
+                    </div>
+                    <div class="modal-body">
+                    	
+                         <h2>Select Media Device</h2><br /><br />
+                <select id="audio-devices"></select>
+                <select id="video-devices"></select><br /><br />
+                <button id="select-device">Select Device</button><br />
+                
+                
+                
+                
+                
+          <script>
+               // var connection = new RTCMultiConnection();
+                //connection.setDefaultEventsForMediaElement = false;
+
+                connection.enumerateDevices(function (devices) {
+                    devices.forEach(appendOption);
+
+                    function appendOption(device) {
+                        var option = document.createElement('option');
+                        option.innerHTML = device.label || (device.kind + ': ' + device.deviceId);
+                        option.value = device.deviceId;
+
+                        if (device.kind.indexOf('audio') !== -1) {
+                            selectAudioDevices.appendChild(option);
+                        } else selectVideoDevices.appendChild(option);
+                    }
+                });
+
+                document.getElementById('select-device').onclick = function () {
+                    //this.disabled = true;
+                    connection.selectDevices(selectAudioDevices.value, selectVideoDevices.value);
+                    connection.captureUserMedia();
+                };
+
+                var selectAudioDevices = document.getElementById('audio-devices');
+                var selectVideoDevices = document.getElementById('video-devices');
+
+                var videos = document.querySelector('#videos-container');
+
+                connection.onstream = function(e) {
+                    videos.appendChild(e.mediaElement);
+					$(".commented-container").uncomment();
+                };
+            </script>
+                        
+                        
+              -->          
+                                          
+                        
+                        
+                        
+                        
+                    </div>
+                    <div class="modal-footer">
+                    	<a class="btn btn-default" data-dismiss="modal">Close</a>
+                    </div>
+                </div>
+            </div>
+        </div>
     
     
     <div class="modal fade" id="sharewith" role="dialog">
